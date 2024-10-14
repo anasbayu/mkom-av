@@ -529,6 +529,10 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 1659734547}
+    - targetCorrespondingSourceObject: {fileID: 6036943006681877870, guid: affd65c6c8bad6f438c35382c581f299,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1659734548}
   m_SourcePrefab: {fileID: 100100000, guid: affd65c6c8bad6f438c35382c581f299, type: 3}
 --- !u!1 &1276885004 stripped
 GameObject:
@@ -741,6 +745,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Minivan
       objectReference: {fileID: 0}
+    - target: {fileID: 5965209700560220994, guid: c98f7aa5a4b596d4aa2cbec16569d93f,
+        type: 3}
+      propertyPath: m_TagString
+      value: Car
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -864,6 +873,20 @@ MonoBehaviour:
   rayMissColor: {r: 1, g: 1, b: 1, a: 1}
   m_StartVerticalOffset: 1
   m_EndVerticalOffset: 1
+--- !u!114 &1659734548
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1276885004}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3a5c9d521e5ef4759a8246a07d52221e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  DecisionPeriod: 5
+  TakeActionsBetweenDecisions: 1
 --- !u!1 &1730080025
 GameObject:
   m_ObjectHideFlags: 0
@@ -1498,6 +1521,11 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 1d403ab3ff4d1fc4b89024debb9acc85, type: 2}
+    - target: {fileID: 3331692173467793615, guid: 4a62c74f83f1da34d8ccbba62ce3d0a0,
+        type: 3}
+      propertyPath: m_TagString
+      value: Wall
+      objectReference: {fileID: 0}
     - target: {fileID: 3940190251059782436, guid: 4a62c74f83f1da34d8ccbba62ce3d0a0,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -1538,6 +1566,11 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 1d403ab3ff4d1fc4b89024debb9acc85, type: 2}
+    - target: {fileID: 6285993974769423106, guid: 4a62c74f83f1da34d8ccbba62ce3d0a0,
+        type: 3}
+      propertyPath: m_TagString
+      value: Wall
+      objectReference: {fileID: 0}
     - target: {fileID: 6360674060285552158, guid: 4a62c74f83f1da34d8ccbba62ce3d0a0,
         type: 3}
       propertyPath: m_RootOrder
@@ -1618,6 +1651,11 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 1d403ab3ff4d1fc4b89024debb9acc85, type: 2}
+    - target: {fileID: 7374296402289589882, guid: 4a62c74f83f1da34d8ccbba62ce3d0a0,
+        type: 3}
+      propertyPath: m_TagString
+      value: Wall
+      objectReference: {fileID: 0}
     - target: {fileID: 7462158166575647421, guid: 4a62c74f83f1da34d8ccbba62ce3d0a0,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
