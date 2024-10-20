@@ -1,0 +1,29 @@
+{
+    "Drive-PPO-straight": {
+        "checkpoints": [
+            {
+                "steps": 289563,
+                "file_path": "results\\experiment2\\Drive-PPO-straight\\Drive-PPO-straight-289563.onnx",
+                "reward": -0.13394615450157568,
+                "creation_time": 1728901887.7386134,
+                "auxillary_file_paths": [
+                    "results\\experiment2\\Drive-PPO-straight\\Drive-PPO-straight-289563.pt"
+                ]
+            }
+        ],
+        "final_checkpoint": {
+            "steps": 289563,
+            "file_path": "results\\experiment2\\Drive-PPO-straight.onnx",
+            "reward": -0.13394615450157568,
+            "creation_time": 1728901887.7386134,
+            "auxillary_file_paths": [
+                "results\\experiment2\\Drive-PPO-straight\\Drive-PPO-straight-289563.pt"
+            ]
+        }
+    },
+    "metadata": {
+        "stats_format_version": "0.3.0",
+        "mlagents_version": "1.1.0",
+        "torch_version": "2.4.1+cpu"
+    }
+}

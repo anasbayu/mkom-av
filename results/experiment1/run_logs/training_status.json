@@ -1,0 +1,47 @@
+{
+    "Drive-PPO": {
+        "checkpoints": [
+            {
+                "steps": 379361,
+                "file_path": "results\\experiment1\\Drive-PPO\\Drive-PPO-379361.onnx",
+                "reward": -110.26498716076215,
+                "creation_time": 1728895276.3853638,
+                "auxillary_file_paths": [
+                    "results\\experiment1\\Drive-PPO\\Drive-PPO-379361.pt"
+                ]
+            },
+            {
+                "steps": 499940,
+                "file_path": "results\\experiment1\\Drive-PPO\\Drive-PPO-499940.onnx",
+                "reward": -162.66975692562434,
+                "creation_time": 1728896909.6791306,
+                "auxillary_file_paths": [
+                    "results\\experiment1\\Drive-PPO\\Drive-PPO-499940.pt"
+                ]
+            },
+            {
+                "steps": 500004,
+                "file_path": "results\\experiment1\\Drive-PPO\\Drive-PPO-500004.onnx",
+                "reward": -162.66975692562434,
+                "creation_time": 1728896909.728392,
+                "auxillary_file_paths": [
+                    "results\\experiment1\\Drive-PPO\\Drive-PPO-500004.pt"
+                ]
+            }
+        ],
+        "final_checkpoint": {
+            "steps": 500004,
+            "file_path": "results\\experiment1\\Drive-PPO.onnx",
+            "reward": -162.66975692562434,
+            "creation_time": 1728896909.728392,
+            "auxillary_file_paths": [
+                "results\\experiment1\\Drive-PPO\\Drive-PPO-500004.pt"
+            ]
+        }
+    },
+    "metadata": {
+        "stats_format_version": "0.3.0",
+        "mlagents_version": "1.1.0",
+        "torch_version": "2.4.1+cpu"
+    }
+}

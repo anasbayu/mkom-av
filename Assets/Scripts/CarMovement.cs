@@ -47,83 +47,89 @@ public class CarMovement : MonoBehaviour
 
     // private CarLights carLights;
 
-    void Start()
-    {
+    void Start(){
         carRb = GetComponent<Rigidbody>();
         carRb.centerOfMass = _centerOfMass;
 
         // carLights = GetComponent<CarLights>();
     }
 
-    void Update()
-    {
-        GetInputs();
-        AnimateWheels();
-        WheelEffects();
-    }
+    // void Update()
+    // {
+    //     GetInputs();
+    //     AnimateWheels();
+    //     WheelEffects();
+    // }
 
-    void LateUpdate()
-    {
+    void LateUpdate(){
         Move();
         Steer();
         Brake();
     }
 
-    public void MoveInput(float input)
-    {
+    public void MoveInput(float input){
         moveInput = input;
     }
 
-    public void SteerInput(float input)
-    {
+    public void SteerInput(float input){
         steerInput = input;
     }
 
-    void GetInputs()
-    {
-        if(control == ControlMode.Keyboard)
-        {
+    void GetInputs(){
+        if(control == ControlMode.Keyboard){
             moveInput = Input.GetAxis("Vertical");
             steerInput = Input.GetAxis("Horizontal");
         }
     }
 
-    void Move()
-    {
-        foreach(var wheel in wheels)
-        {
+    public void GetInputs(float AImoveInput, float AIsteerInput){
+        moveInput = AImoveInput;
+        steerInput = AIsteerInput;
+
+        AnimateWheels();
+        // WheelEffects();
+    }
+
+    public void StopVehicle(){
+        moveInput = 0;
+        steerInput = 0;
+        foreach (var wheel in wheels){
+            wheel.wheelCollider.motorTorque = 0;
+        }
+
+        foreach (var wheel in wheels){
+            wheel.wheelCollider.brakeTorque = 1000;
+        }
+
+        gameObject.GetComponent<Rigidbody>().velocity = Vector3.zero;
+    }
+
+    void Move(){
+        foreach(var wheel in wheels){
             wheel.wheelCollider.motorTorque = moveInput * 600 * maxAcceleration * Time.deltaTime;
         }
     }
 
-    void Steer()
-    {
-        foreach(var wheel in wheels)
-        {
-            if (wheel.axel == Axel.Front)
-            {
+    void Steer(){
+        foreach(var wheel in wheels){
+            if (wheel.axel == Axel.Front){
                 var _steerAngle = steerInput * turnSensitivity * maxSteerAngle;
                 wheel.wheelCollider.steerAngle = Mathf.Lerp(wheel.wheelCollider.steerAngle, _steerAngle, 0.6f);
             }
         }
     }
 
-    void Brake()
-    {
-        if (Input.GetKey(KeyCode.Space) || moveInput == 0)
-        {
-            foreach (var wheel in wheels)
-            {
+    void Brake(){
+        if (Input.GetKey(KeyCode.Space) || moveInput == 0){
+            foreach (var wheel in wheels){
                 wheel.wheelCollider.brakeTorque = 300 * brakeAcceleration * Time.deltaTime;
             }
 
             // carLights.isBackLightOn = true;
             // carLights.OperateBackLights();
         }
-        else
-        {
-            foreach (var wheel in wheels)
-            {
+        else{
+            foreach (var wheel in wheels){
                 wheel.wheelCollider.brakeTorque = 0;
             }
 
@@ -132,10 +138,8 @@ public class CarMovement : MonoBehaviour
         }
     }
 
-    void AnimateWheels()
-    {
-        foreach(var wheel in wheels)
-        {
+    void AnimateWheels(){
+        foreach(var wheel in wheels){
             Quaternion rot;
             Vector3 pos;
             wheel.wheelCollider.GetWorldPose(out pos, out rot);
@@ -144,19 +148,14 @@ public class CarMovement : MonoBehaviour
         }
     }
 
-    void WheelEffects()
-    {
-        foreach (var wheel in wheels)
-        {
+    void WheelEffects(){
+        foreach (var wheel in wheels){
             //var dirtParticleMainSettings = wheel.smokeParticle.main;
 
-            if (Input.GetKey(KeyCode.Space) && wheel.axel == Axel.Rear && wheel.wheelCollider.isGrounded == true && carRb.velocity.magnitude >= 10.0f)
-            {
+            if (Input.GetKey(KeyCode.Space) && wheel.axel == Axel.Rear && wheel.wheelCollider.isGrounded == true && carRb.velocity.magnitude >= 10.0f){
                 wheel.wheelEffectObj.GetComponentInChildren<TrailRenderer>().emitting = true;
                 wheel.smokeParticle.Emit(1);
-            }
-            else
-            {
+            }else{
                 wheel.wheelEffectObj.GetComponentInChildren<TrailRenderer>().emitting = false;
             }
         }

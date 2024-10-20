@@ -1,0 +1,38 @@
+{
+    "Drive-PPO-straight": {
+        "checkpoints": [
+            {
+                "steps": 499975,
+                "file_path": "results\\experiment3-checkpoint\\Drive-PPO-straight\\Drive-PPO-straight-499975.onnx",
+                "reward": -1500.012426873912,
+                "creation_time": 1728911404.3169134,
+                "auxillary_file_paths": [
+                    "results\\experiment3-checkpoint\\Drive-PPO-straight\\Drive-PPO-straight-499975.pt"
+                ]
+            },
+            {
+                "steps": 500006,
+                "file_path": "results\\experiment3-checkpoint\\Drive-PPO-straight\\Drive-PPO-straight-500006.onnx",
+                "reward": -1481.5764195056672,
+                "creation_time": 1728911404.356655,
+                "auxillary_file_paths": [
+                    "results\\experiment3-checkpoint\\Drive-PPO-straight\\Drive-PPO-straight-500006.pt"
+                ]
+            }
+        ],
+        "final_checkpoint": {
+            "steps": 500006,
+            "file_path": "results\\experiment3-checkpoint\\Drive-PPO-straight.onnx",
+            "reward": -1481.5764195056672,
+            "creation_time": 1728911404.356655,
+            "auxillary_file_paths": [
+                "results\\experiment3-checkpoint\\Drive-PPO-straight\\Drive-PPO-straight-500006.pt"
+            ]
+        }
+    },
+    "metadata": {
+        "stats_format_version": "0.3.0",
+        "mlagents_version": "1.1.0",
+        "torch_version": "2.4.1+cpu"
+    }
+}
