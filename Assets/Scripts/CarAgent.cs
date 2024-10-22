@@ -41,9 +41,6 @@ public class CarAgent : Agent
         carMovement.GetInputs(moveInput, steerInput);
     }
 
-    // public override void OnActionReceived(float[] vectorAction){
-    
-    // }
 
     public override void Heuristic(in ActionBuffers actionsOut){
         ActionSegment<float> continuousActions = actionsOut.ContinuousActions;
@@ -67,25 +64,12 @@ public class CarAgent : Agent
     }
 
     private void OnCollisionEnter(Collision other) {
-        if(other.gameObject.CompareTag("Building") || other.gameObject.CompareTag("Car")){
-            Debug.Log("Hit wall");
-            GainReward(-1f);
-        }
-    }
-
-    private void OnCollisionStay(Collision other) {
         if(other.gameObject.CompareTag("Wall")){
-            Debug.Log("in a wall");
-            GainReward(-0.1f);
+            Debug.Log("Hit a wall");
+            GainReward(-3f);
+            EndEpisode();
         }
     }
-
-    private void OnTriggerStay(Collider other) {
-        if(other.gameObject.CompareTag("Sidewalk")){
-            GainReward(-0.5f);
-        }
-    }
-
 
     void GainReward(float reward){
         AddReward(reward);
